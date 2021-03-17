@@ -72,7 +72,7 @@ namespace AppointmentScheduling.Controllers
                     Name = model.Name
                 };
 
-                var result = await _userManager.CreateAsync(user);
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if(result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, model.RoleName);
@@ -88,7 +88,7 @@ namespace AppointmentScheduling.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Logoff()
+        public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
