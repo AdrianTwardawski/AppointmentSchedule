@@ -1,6 +1,6 @@
 ﻿using AppointmentScheduling.Data;
 using AppointmentScheduling.Models;
-using AppointmentScheduling.Models.ViewModel;
+using AppointmentScheduling.Models.ViewModels;
 using AppointmentScheduling.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

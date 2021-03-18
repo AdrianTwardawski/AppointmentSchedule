@@ -1,4 +1,4 @@
-﻿using AppointmentScheduling.Models.ViewModel;
+﻿using AppointmentScheduling.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

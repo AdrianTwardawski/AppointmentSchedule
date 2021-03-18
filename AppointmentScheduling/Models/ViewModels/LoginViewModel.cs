@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AppointmentScheduling.Models.ViewModel
+namespace AppointmentScheduling.Models.ViewModels
 {
     public class LoginViewModel
     {
