@@ -436,3 +436,4 @@ C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\bin\Debug
 C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Appointment\Index.cshtml.g.cs
+C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Shared\_AddEditAppointment.cshtml.g.cs
