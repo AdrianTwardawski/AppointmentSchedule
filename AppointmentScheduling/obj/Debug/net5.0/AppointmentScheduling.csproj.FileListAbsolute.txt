@@ -435,3 +435,4 @@ C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug
 C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\bin\Debug\net5.0\Microsoft.VisualStudio.Web.BrowserLink.dll
 C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\Adrian\Desktop\c#\AppointmentScheduling\AppointmentScheduling\obj\Debug\net5.0\Razor\Views\Appointment\Index.cshtml.g.cs
