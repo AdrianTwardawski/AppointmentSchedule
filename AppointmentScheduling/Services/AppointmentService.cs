@@ -1,5 +1,5 @@
 ﻿using AppointmentScheduling.Data;
-using AppointmentScheduling.Models.ViewModel;
+using AppointmentScheduling.Models.ViewModels;
 using AppointmentScheduling.Utility;
 using System;
 using System.Collections.Generic;
