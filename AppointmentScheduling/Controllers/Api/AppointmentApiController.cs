@@ -1,4 +1,4 @@
-﻿using AppointmentScheduling.Models.ViewModels;
+﻿using AppointmentScheduling.Models.ViewModel;
 using AppointmentScheduling.Services;
 using AppointmentScheduling.Utility;
 using Microsoft.AspNetCore.Http;

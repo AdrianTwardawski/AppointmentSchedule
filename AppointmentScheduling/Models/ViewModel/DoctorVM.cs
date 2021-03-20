@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AppointmentScheduling.Models.ViewModels
+namespace AppointmentScheduling.Models.ViewModel
 {
-    public class PatientVM
+    public class DoctorVM
     {
         public string Id { get; set; }
-        public  string Name { get; set; }
+        public string Name { get; set; }
     }
 }

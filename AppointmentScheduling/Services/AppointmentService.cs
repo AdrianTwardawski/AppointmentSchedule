@@ -1,6 +1,6 @@
 ﻿using AppointmentScheduling.Data;
 using AppointmentScheduling.Models;
-using AppointmentScheduling.Models.ViewModels;
+using AppointmentScheduling.Models.ViewModel;
 using AppointmentScheduling.Utility;
 using System;
 using System.Collections.Generic;
