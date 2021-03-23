@@ -27,7 +27,6 @@ function InitializeCalendar() {
                 select: function (event) {
                     onShowModal(event, null);
                 },
-                
                 eventDisplay: 'block',
                 events: function (fetchInfo, successCallback, failureCallback) {
                     $.ajax({
@@ -56,22 +55,39 @@ function InitializeCalendar() {
                             $.notify("Error", "error");
                         }
                     });
+                },
+                eventClick: function (info) {
+                    getEventDetailsByEventId(info.event);
                 }
             });
             calendar.render();
         }
 
-    }    
+    }
     catch (e) {
         alert(e);
     }
+
 }
 
+
 function onShowModal(obj, isEventDetail) {
+    if (isEventDetail != null) {
+
+        $("#title").val(obj.title);
+        $("#description").val(obj.description);
+        $("#appointmentDate").val(obj.startDate);
+        $("#duration").val(obj.duration);
+        $("#doctorId").val(obj.doctorId);
+        $("#patientId").val(obj.patientId);
+        $("#id").val(obj.id);
+
+    }
     $("#appointmentInput").modal("show");
 }
 
 function onCloseModal() {
+
     $("#appointmentInput").modal("hide");
 }
 
@@ -82,7 +98,7 @@ function onSubmitForm() {
             Title: $("#title").val(),
             Description: $("#description").val(),
             StartDate: $("#appointmentDate").val(),
-            Duration: $("#duration").val(),
+            Duriation: $("#duration").val(),
             DoctorId: $("#doctorId").val(),
             PatientId: $("#patientId").val(),
         };
@@ -128,4 +144,22 @@ function checkValidation() {
 
     return isValid;
 
+}
+
+function getEventDetailsByEventId(info) {
+    $.ajax({
+        url: routeURL + '/api/Appointment/GetCalendarDataById/' + info.id,
+        type: 'GET',
+        dataType: 'JSON',
+        success: function (response) {
+
+            if (response.status === 1 && response.dataenum !== undefined) {
+                onShowModal(response.dataenum, true); 
+            }
+            successCallback(events);
+        },
+        error: function (xhr) {
+            $.notify("Error", "error");
+        }
+    });
 }

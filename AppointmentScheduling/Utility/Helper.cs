@@ -23,13 +23,13 @@ namespace AppointmentScheduling.Utility
         public static int success_code = 1;
         public static int failure_code = 0;
 
-        public static List<SelectListItem> GetRolesForDropDown()  // DropDown - to Lista Rozwijana
+        public static List<SelectListItem> GetRolesForDropDown()
         {
             return new List<SelectListItem>
             {
-                new SelectListItem{ Value = Helper.Admin, Text = Helper.Admin },
-                new SelectListItem{ Value = Helper.Patient, Text = Helper.Patient },
-                new SelectListItem{ Value = Helper.Doctor, Text = Helper.Doctor },
+                new SelectListItem{Value=Helper.Admin,Text=Helper.Admin},
+                new SelectListItem{Value=Helper.Patient,Text=Helper.Patient},
+                new SelectListItem{Value=Helper.Doctor,Text=Helper.Doctor}
             };
         }
 

@@ -28,9 +28,6 @@ namespace AppointmentScheduling.Controllers.Api
             role = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
         }
 
-
-
-
         [HttpPost]
         [Route("SaveCalendarData")]
         public IActionResult SaveCalendarData(AppointmentVM data)
@@ -64,23 +61,23 @@ namespace AppointmentScheduling.Controllers.Api
             CommonResponse<List<AppointmentVM>> commonResponse = new CommonResponse<List<AppointmentVM>>();
             try
             {
-                if(role == Helper.Patient)
+                if (role == Helper.Patient)
                 {
                     commonResponse.dataenum = _appointmentService.PatientsEventsById(loginUserId);
                     commonResponse.status = Helper.success_code;
                 }
-                else if(role == Helper.Doctor)
+                else if (role == Helper.Doctor)
                 {
                     commonResponse.dataenum = _appointmentService.DoctorsEventsById(loginUserId);
                     commonResponse.status = Helper.success_code;
                 }
                 else
                 {
-                    commonResponse.dataenum = _appointmentService.PatientsEventsById(doctorId);
+                    commonResponse.dataenum = _appointmentService.DoctorsEventsById(doctorId);
                     commonResponse.status = Helper.success_code;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 commonResponse.message = e.Message;
                 commonResponse.status = Helper.failure_code;

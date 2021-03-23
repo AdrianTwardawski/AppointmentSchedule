@@ -23,7 +23,7 @@ namespace AppointmentScheduling.Services
             var startDate = DateTime.Parse(model.StartDate);
             var endDate = DateTime.Parse(model.StartDate).AddMinutes(Convert.ToDouble(model.Duration));
 
-            if(model != null && model.Id > 0)
+            if (model != null && model.Id > 0)
             {
                 //update
                 return 1;
@@ -48,6 +48,7 @@ namespace AppointmentScheduling.Services
                 await _db.SaveChangesAsync();
                 return 2;
             }
+
         }
 
         public List<AppointmentVM> DoctorsEventsById(string doctorId)
