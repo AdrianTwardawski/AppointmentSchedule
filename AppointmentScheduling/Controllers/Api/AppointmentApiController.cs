@@ -106,15 +106,15 @@ namespace AppointmentScheduling.Controllers.Api
         }
 
         [HttpGet]
-        [Route("DeleteAppointment/{id}")]
-        public async Task<IActionResult> DeleteAppointment(int id)
+        [Route("DeleteAppoinment/{id}")]
+        public async Task<IActionResult> DeleteAppoinment(int id)
         {
             CommonResponse<int> commonResponse = new CommonResponse<int>();
             try
             {
-   
                 commonResponse.status = await _appointmentService.Delete(id);
                 commonResponse.message = commonResponse.status == 1 ? Helper.appointmentDeleted : Helper.somethingWentWrong;
+
             }
             catch (Exception e)
             {
@@ -126,7 +126,7 @@ namespace AppointmentScheduling.Controllers.Api
 
         [HttpGet]
         [Route("ConfirmEvent/{id}")]
-        public async Task<IActionResult> ConfirmEvent(int id)
+        public IActionResult ConfirmEvent(int id)
         {
             CommonResponse<int> commonResponse = new CommonResponse<int>();
             try
@@ -139,9 +139,11 @@ namespace AppointmentScheduling.Controllers.Api
                 }
                 else
                 {
+
                     commonResponse.status = Helper.failure_code;
                     commonResponse.message = Helper.meetingConfirmError;
                 }
+
             }
             catch (Exception e)
             {
@@ -150,5 +152,6 @@ namespace AppointmentScheduling.Controllers.Api
             }
             return Ok(commonResponse);
         }
+
     }
 }
