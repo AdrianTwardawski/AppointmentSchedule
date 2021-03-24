@@ -1,4 +1,5 @@
-﻿using AppointmentScheduling.Data;
+﻿
+using AppointmentScheduling.Data;
 using AppointmentScheduling.Models;
 using AppointmentScheduling.Models.ViewModel;
 using AppointmentScheduling.Utility;
@@ -14,7 +15,6 @@ namespace AppointmentScheduling.Services
     {
         private readonly ApplicationDbContext _db;
         private readonly IEmailSender _emailSender;
-
         public AppointmentService(ApplicationDbContext db, IEmailSender emailSender)
         {
             _db = db;
@@ -27,7 +27,6 @@ namespace AppointmentScheduling.Services
             var endDate = DateTime.Parse(model.StartDate).AddMinutes(Convert.ToDouble(model.Duration));
             var patient = _db.Users.FirstOrDefault(u => u.Id == model.PatientId);
             var doctor = _db.Users.FirstOrDefault(u => u.Id == model.DoctorId);
-
             if (model != null && model.Id > 0)
             {
                 //update
@@ -60,7 +59,7 @@ namespace AppointmentScheduling.Services
                     AdminId = model.AdminId
                 };
                 await _emailSender.SendEmailAsync(doctor.Email, "Appointment Created",
-                   $"Your appointment with {patient.Name} is created and in pending status");
+                    $"Your appointment with {patient.Name} is created and in pending status");
                 await _emailSender.SendEmailAsync(patient.Email, "Appointment Created",
                     $"Your appointment with {doctor.Name} is created and in pending status");
                 _db.Appointments.Add(appointment);
@@ -123,6 +122,7 @@ namespace AppointmentScheduling.Services
                 DoctorName = _db.Users.Where(x => x.Id == c.DoctorId).Select(x => x.Name).FirstOrDefault(),
             }).SingleOrDefault();
         }
+
         public List<DoctorVM> GetDoctorList()
         {
             var doctors = (from user in _db.Users
